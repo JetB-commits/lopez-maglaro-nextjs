@@ -8,6 +8,24 @@ import { ChatTree } from '@lopez-maglaro/shared'
 import { format } from 'date-fns'
 import { ja } from 'date-fns/locale'
 
+// 日付の妥当性をチェックするヘルパー関数
+const isValidDate = (dateString: string | Date | undefined | null) => {
+  if (!dateString) return false
+  const date = new Date(dateString)
+  return date instanceof Date && !isNaN(date.getTime())
+}
+
+// 安全な日付フォーマット関数
+const formatSafeDate = (dateString: string | Date | undefined | null) => {
+  if (!isValidDate(dateString)) return '日付不明'
+  try {
+    return format(new Date(dateString!), 'yyyy年MM月dd日', { locale: ja })
+  } catch (error) {
+    console.error('Date formatting error:', error)
+    return '日付不明'
+  }
+}
+
 export default function DashboardPage() {
   const router = useRouter()
   const { user, logout } = useAuthStore()
@@ -70,12 +88,10 @@ export default function DashboardPage() {
           <div className="bg-white p-6 rounded-lg shadow">
             <h3 className="text-lg font-semibold mb-2">チャット数</h3>
             <p className="text-2xl font-bold">{chatTrees.length}</p>
-          </div>
-          
-          <div className="bg-white p-6 rounded-lg shadow">
+          </div>          <div className="bg-white p-6 rounded-lg shadow">
             <h3 className="text-lg font-semibold mb-2">アカウント作成日</h3>
             <p className="text-lg">
-              {format(new Date(user.createdAt), 'yyyy年MM月dd日', { locale: ja })}
+              {formatSafeDate(user.createdAt)}
             </p>
           </div>
         </div>

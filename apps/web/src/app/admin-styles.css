@@ -1,0 +1,376 @@
+/* Admin Styles - based on the design image */
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+
+/* Font Face for Icons */
+@font-face {
+  font-family: 'icomoon';
+  src: url('/fonts/icomoon.eot?gkx3pf');
+  src: url('/fonts/icomoon.eot?gkx3pf#iefix') format('embedded-opentype'),
+    url('/fonts/icomoon.ttf?gkx3pf') format('truetype'),
+    url('/fonts/icomoon.woff?gkx3pf') format('woff'),
+    url('/fonts/icomoon.svg?gkx3pf#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Icon Classes */
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "icomoon" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base Styles */
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper,
+body,
+html {
+  min-height: 100%;
+  height: 100% !important;
+}
+
+.wrapper {
+  background: #f4f7fa;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styles */
+.main-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background: #343a40;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.sidebar-dark-primary {
+  background: #343a40;
+}
+
+.brand-link {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #343a40;
+  border-bottom: 1px solid #4b545c;
+}
+
+.admin-uchino-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.brand-image {
+  width: 33px;
+  height: 33px;
+  margin-right: 0.5rem;
+}
+
+.admin_utino_logo img {
+  width: auto;
+  height: 26px;
+}
+
+.sidebar {
+  height: calc(100% - 104px);
+  overflow: hidden;
+}
+
+.nav-sidebar {
+  padding: 0;
+  list-style: none;
+}
+
+.nav-item {
+  display: block;
+}
+
+.nav-link {
+  display: block;
+  padding: 12px 24px;
+  color: #c2c7d0;
+  text-decoration: none;
+  border-radius: 0;
+  transition: all 0.15s;
+}
+
+.nav-link:hover {
+  background: #495057;
+  color: #fff;
+}
+
+.nav-link.active {
+  background: transparent;
+  color: #37b9ca;
+  position: relative;
+}
+
+.nav-link.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(45deg, #017bbc, #01a59c);
+  border-radius: 50%;
+}
+
+.nav-link p {
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Content Wrapper */
+.content-wrapper {
+  margin-left: 250px;
+  background: #f4f7fa;
+  min-height: 100vh;
+  width: calc(100% - 250px);
+}
+
+.content-header {
+  padding: 0.5rem;
+}
+
+.content-header h1 {
+  font-size: 1.6rem;
+  padding-left: 40px;
+  margin: 0;
+  color: #495057;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.row {
+  margin: 0;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.col-sm-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.content {
+  padding: 0 16px 16px;
+}
+
+/* Card Styles */
+.card {
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  padding: 32px;
+}
+
+/* News Area Styles */
+#news_area {
+  width: 100%;
+}
+
+#news_area .cont .news_day_title:nth-child(odd) {
+  background: #f5f8fb;
+}
+
+#news_area .cont .title {
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #495057;
+}
+
+#news_area .cont .post_day {
+  padding: 16px;
+  color: #6c757d;
+  font-size: 14px;
+}
+
+.news_day_title {
+  display: flex;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.news_day_pub {
+  display: flex;
+  align-items: center;
+}
+
+.release_date {
+  color: #6c757d;
+  font-size: 14px;
+  margin-right: 40px;
+}
+
+/* Text Colors */
+.text-dark {
+  color: #495057;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+/* Pagination Styles */
+.news_nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 32px 0 0;
+  list-style: none;
+  margin: 0;
+}
+
+.news_nav li {
+  overflow: hidden;
+  margin: 0 12px;
+  border: none;
+}
+
+.news_nav li.prev,
+.news_nav li.next {
+  width: 64px;
+  height: 40px;
+}
+
+.news_nav li:not(:first-of-type):not(:last-of-type) {
+  width: 40px;
+  height: 40px;
+  font-style: italic;
+  border-radius: 50%;
+}
+
+.news_nav li.disabled {
+  display: none;
+}
+
+.news_nav li a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  color: #000000;
+  background: none;
+  border: none;
+  text-decoration: none;
+}
+
+.news_nav li a span {
+  font-size: 18px;
+}
+
+.news_nav .page-item.active .page-link,
+.news_nav li:not(:first-of-type):not(:last-of-type) a:hover {
+  color: #fff;
+  background: #000000;
+}
+
+.news_nav li.prev a:hover,
+.news_nav li.next a:hover {
+  color: #000000;
+  background: #ffffff;
+  opacity: 0.6;
+}
+
+.page-link:focus {
+  box-shadow: none;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 640px) {
+  .main-sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+
+  .content-wrapper {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .content-header h1 {
+    padding-left: 0;
+  }
+
+  .card-body {
+    padding: 20px;
+  }
+
+  .news_day_title {
+    flex-direction: column;
+  }
+
+  .news_day_pub {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .release_date {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+}
+
+/* Additional utility classes */
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.font-weight-light {
+  font-weight: 300;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.flex-column {
+  flex-direction: column;
+}
